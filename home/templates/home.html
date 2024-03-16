@@ -1,12 +1,430 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>home</h1>
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block main_content %}
+
+        <!-- Carousel Start -->
+        <div class="container-fluid p-0 mb-5">
+            <div class="owl-carousel header-carousel position-relative">
+                <div class="owl-carousel-item position-relative">
+                    <img class='img-fluid' src="{% static 'resources/schoolBuilding1.jpg' %}" alt=''>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">"Empowering Abilities, Cultivating Potential, Building Bright Futures."</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel-item position-relative">
+                    <img class='img-fluid' src="{% static 'resources/topimg2.jpg' %}" alt=''>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
+                        <div class="container">
+                            <div class="row justify-content-start">
+                                <div class="col-10 col-lg-8">
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">Make A Brighter Future For Your Child</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+
+        <!-- Facilities Start -->
+        <div id="facility"><br></div>
+        <div  class="container-xxl py-5">
+            <div class="container">
+                <div  class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">School Facilities/activities</h1>
+                    <p>Our school provides tailored English literacy instruction alongside physical activities, yoga, and regular therapies and counseling sessions, fostering holistic development for students of varying abilities across different age groups.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-primary">
+                                <span class="bg-primary"></span>
+                                <i class="fa fa-3x text-primary"></i>
+                                <span class="bg-primary"></span>
+                            </div>
+                            <div class="facility-text bg-primary">
+                                <h3 class="text-primary mb-3">Customized Education:</h3>
+                                <p class="mb-0">Students are placed in sections based on their mental abilities, ensuring personalized learning experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-success">
+                                <span class="bg-success"></span>
+                                <i class="fa fa-3x text-success"></i>
+                                <span class="bg-success"></span>
+                            </div>
+                            <div class="facility-text bg-success">
+                                <h3 class="text-success mb-3">Health and Wellness:</h3>
+                                <p class="mb-0"> Daily physical exercises, yoga, and therapy sessions promote both physical and mental well-being.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-warning">
+                                <span class="bg-warning"></span>
+                                <i class="fa fa-3x text-warning"></i>
+                                <span class="bg-warning"></span>
+                            </div>
+                            <div class="facility-text bg-warning">
+                                <h3 class="text-warning mb-3">Regular Counseling:</h3>
+                                <p class="mb-0">Ongoing counseling supports students' emotional and academic needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="facility-item">
+                            <div class="facility-icon bg-info">
+                                <span class="bg-info"></span>
+                                <i class="fa fa-3x text-info"></i>
+                                <span class="bg-info"></span>
+                            </div>
+                            <div class="facility-text bg-info">
+                                <h3 class="text-info mb-3">Individualized Support:</h3>
+                                <p class="mb-0">Each student receives tailored attention to thrive academically, emotionally, and physically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Facilities End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="mb-4">Learn more about us</h1>
+                        <h5 class="mb-4">Our Objectives</h5>
+                        <p>To help and train these special children to become self-dependent and be able to take up personal responsibilities without help from their parents or other relatives.</p>
+                        <h5 class="mb-4">Our Goals</h5>
+                        <p class="mb-4">To bring the special children into the main stream so that they can support themselves and are financially independent.</p>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-sm-6">
+                                <a class='btn btn-primary rounded-pill py-3 px-5' href="about">Read More</a>
+                            </div>
+                            <!-- <div class="col-sm-6">
+                                <div class="d-flex align-items-center">
+                                    <img class='rounded-circle flex-shrink-0' src="{% static 'img/user.jpg' %}" alt='' style='width: 45px; height: 45px;'>
+                                    <div class="ms-3">
+                                        <h6 class="text-primary mb-1">Jhon Doe</h6>
+                                        <small>CEO & Founder</small>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class='img-fluid w-75 rounded-circle bg-light p-3' src="{% static 'resources/LearnMore1.jpg' %}" alt=''>
+                            </div>
+                            <div class="col-6 text-start" style="margin-top: -150px;">
+                                <img class='img-fluid w-100 rounded-circle bg-light p-3' src="{% static 'resources/LearnMore2.jpg' %}" alt=''>
+                            </div>
+                            <div class="col-6 text-end" style="margin-top: -150px;">
+                                <img class='img-fluid w-100 rounded-circle bg-light p-3' src="{% static 'resources/LearnMore3.jpg' %}" alt=''>
+                            </div>
+                            <div id="our_pride"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Call To Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <img class='position-absolute w-100 h-100 rounded' src="{% static 'img/our_pride.jpg' %}" style='object-fit: cover;'>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Our Pride</h1>
+                                <p class="mb-4" >• We are able to place three of our students in to mainstream society. One works as an assistant in a local shop. The second works as a messenger in an Anganwadi, while the third is a delivery boy at a local shop. <br><br>
+                                    • We have also absorbed one student as Ayahs in our school and he earn a regular salary. 
+                                    Two of our children also passed their SSLC examination with distinction.
+                                </p>
+                                <!-- <a class='btn btn-primary py-3 px-5' href=''>Get Started Now<i class='fa fa-arrow-right ms-2'></i></a> -->
+                                <div id="achieve_scroll"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call To Action End -->
+
+
+        <!-- Classes Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Achivements/Extra Curricular</h1>
+                    <p>Our children actively participated and won medals at state, National and International level sports & cultural competitions and one of our students represented India in the Special Olympics floorball competition held at Michigan, USA and won bronze medal.</p>
+                </div>
+                <div class="row g-4">
+
+
+                    {% comment %} for loop hear  for only 3 content{% endcomment %}
+
+
+
+
+
+                    <form action="events" method="post">
+                        {% csrf_token %}
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="classes-item">
+                                <div class="bg-light w-75 mx-auto p-3">
+                                    <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
+                                </div>
+                                <div class="bg-light rounded p-4 pt-5 mt-n5">
+                                    <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
+                                    
+                                    <!-- button here -->
+                                    <button type="submit" name="detail" value="dynamic hoga" class='rmbtn'>Read More</button>
+
+                                    <div class="row g-1">
+                                        <div class="col-4">
+                                            <div class="border-top border-3 border-primary pt-2">
+                                                <h6 class="text-primary mb-1">Date</h6>
+                                                <small>xyz</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="border-top border-3 border-success pt-2">
+                                                <h6 class="text-success mb-1">Location</h6>
+                                                <small>xyz</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form> 
+                  
+                    
+                </div>
+                <br>
+                <br>
+                <a href="events" class='view_more_btn'>View More</a>
+            </div>
+        </div>
+        <!-- Classes End -->
+
+
+        <!-- Appointment Start -->
+        <!-- <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="h-100 d-flex flex-column justify-content-center p-5">
+                                <h1 class="mb-4">Make Appointment</h1>
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
+                                                <label for="gname">Gurdian Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
+                                                <label for="gmail">Gurdian Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
+                                                <label for="cname">Child Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
+                                                <label for="cage">Child Age</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                                <label for="message">Message</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
+                                <img class='position-absolute w-100 h-100 rounded' src="{% static 'img/appointment.jpg' %}" style='object-fit: cover;'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Appointment End -->
+
+
+        <!-- Team Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Present Managing Trustees</h1>
+                    <p>The present managing trustees oversee the administration and strategic direction of the organization, ensuring its mission and objectives are effectively pursued.</p>
+                </div>
+                <div class="ag-format-container">
+                    <div class="ag-courses_box">
+                      <div class="ag-courses_item">
+                        <a  class="ag-courses-item_link">
+                          <div class="ag-courses-item_bg"></div>
+                  
+                          <div class="ag-courses-item_title">
+                            Lion. Keshava Salian&#160;
+                          </div>
+                  
+                          <div class="ag-courses-item_date-box">
+                            Position:
+                            <span class="ag-courses-item_date">
+                                President
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                  
+                      <div class="ag-courses_item">
+                        <a class="ag-courses-item_link">
+                          <div class="ag-courses-item_bg"></div>
+                  
+                          <div class="ag-courses-item_title">
+                            Lion. Mohideen Kunhi <span style="font-size: 18px !important;">PMJF</span>&#160;
+                          </div>
+                  
+                          <div class="ag-courses-item_date-box">
+                            Position:
+                            <span class="ag-courses-item_date">
+                                Vice President
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                  
+                      <div class="ag-courses_item">
+                        <a class="ag-courses-item_link">
+                          <div class="ag-courses-item_bg"></div>
+                  
+                          <div class="ag-courses-item_title">
+                            Lion. C. Jeevan Belliappa&#160;
+                          </div>
+                  
+                          <div class="ag-courses-item_date-box">
+                            Position:
+                            <span class="ag-courses-item_date">
+                                Secretary
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                  
+                      <div class="ag-courses_item">
+                        <a class="ag-courses-item_link">
+                          <div class="ag-courses-item_bg"></div>
+                  
+                          <div class="ag-courses-item_title">
+                            Lion. Jayanth Shetty
+                          </div>
+                  
+                          <div class="ag-courses-item_date-box">
+                            Position:
+                            <span class="ag-courses-item_date">
+                              Treasurer
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                  
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- Team End -->
+
+
+        <!-- Testimonial Start -->
+        <!-- <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Our Pride</h1>
+                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <img class='img-fluid flex-shrink-0 rounded-circle' src="{% static 'img/testimonial-1.jpg' %}" style='width: 90px; height: 90px;'>
+                            <div class="ps-3">
+                                <h3 class="mb-1">Client Name</h3>
+                                <span>Profession</span>
+                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <img class='img-fluid flex-shrink-0 rounded-circle' src="{% static 'img/testimonial-2.jpg' %}" style='width: 90px; height: 90px;'>
+                            <div class="ps-3">
+                                <h3 class="mb-1">Client Name</h3>
+                                <span>Profession</span>
+                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <img class='img-fluid flex-shrink-0 rounded-circle' src="{% static 'img/testimonial-3.jpg' %}" style='width: 90px; height: 90px;'>
+                            <div class="ps-3">
+                                <h3 class="mb-1">Client Name</h3>
+                                <span>Profession</span>
+                            </div>
+                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Testimonial End -->
+
+
+{% endblock  %}
+      
+
