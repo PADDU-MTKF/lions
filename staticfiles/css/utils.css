@@ -1,0 +1,14 @@
+.flex{
+    display: flex;
+    align-items: center;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+
+.dt-search{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* margin-right: 0; */
+}

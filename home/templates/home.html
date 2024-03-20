@@ -192,10 +192,12 @@
 
 
 
+                    <div class="form-container flex">
 
-                    <form action="events" method="post">
+                    {% comment %} {% for event in events%} {% endcomment %}
+                    <form action="{% url "event" %}" method="post">
                         {% csrf_token %}
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class=" wow fadeInUp" data-wow-delay="0.1s">
                             <div class="classes-item">
                                 <div class="bg-light w-75 mx-auto p-3">
                                     <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
@@ -204,18 +206,12 @@
                                     <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
                                     
                                     <!-- button here -->
-                                    <button type="submit" name="detail" value="dynamic hoga" class='rmbtn'>Read More</button>
-
+                                    <button type="submit" name="detailViewH" class='rmbtn'>Read More</button>
+                                    
                                     <div class="row g-1">
                                         <div class="col-4">
                                             <div class="border-top border-3 border-primary pt-2">
                                                 <h6 class="text-primary mb-1">Date</h6>
-                                                <small>xyz</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="border-top border-3 border-success pt-2">
-                                                <h6 class="text-success mb-1">Location</h6>
                                                 <small>xyz</small>
                                             </div>
                                         </div>
@@ -224,6 +220,59 @@
                             </div>
                         </div>
                     </form> 
+                    <form action="{% url "event" %}" method="post">
+                        {% csrf_token %}
+                        <div class=" wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="classes-item">
+                                <div class="bg-light w-75 mx-auto p-3">
+                                    <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
+                                </div>
+                                <div class="bg-light rounded p-4 pt-5 mt-n5">
+                                    <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
+                                    
+                                    <!-- button here -->
+                                    <button type="submit" name="detailViewH" class='rmbtn'>Read More</button>
+                                    
+                                    <div class="row g-1">
+                                        <div class="col-4">
+                                            <div class="border-top border-3 border-primary pt-2">
+                                                <h6 class="text-primary mb-1">Date</h6>
+                                                <small>xyz</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form> 
+                    <form action="{% url "event" %}" method="post">
+                        {% csrf_token %}
+                        <div class=" wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="classes-item">
+                                <div class="bg-light w-75 mx-auto p-3">
+                                    <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
+                                </div>
+                                <div class="bg-light rounded p-4 pt-5 mt-n5">
+                                    <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
+                                    
+                                    <!-- button here -->
+                                    <button type="submit" name="detailViewH" class='rmbtn'>Read More</button>
+                                    
+                                    <div class="row g-1">
+                                        <div class="col-4">
+                                            <div class="border-top border-3 border-primary pt-2">
+                                                <h6 class="text-primary mb-1">Date</h6>
+                                                <small>xyz</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form> 
+                    {% comment %} {% endfor %} {% endcomment %}
+                </div>
+
                   
                     
                 </div>

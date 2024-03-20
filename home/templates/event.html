@@ -18,7 +18,7 @@
                     </form>
                     <form action="{% url "event" %}" method="POST">
                         {% csrf_token %}
-                        <div>
+                        <div class="dt-search">
                             <input type="date" id="startDate" name="startDate" class="date-input datepicker" placeholder="From Date" required>
                             <input type="date" id="endDate" name="endDate" class="date-input datepicker" placeholder="To Date" required>
                             <button type="submit" class="search-button" name="dateSearchbtn">Search by Date</button>
@@ -27,14 +27,13 @@
                 </div>
             </center>
 
+            <div class="event_master flex wrap">
             {% for event in data %}
-            <div class="event_master">
                 <div class="event-card">
                     <img src="{{event.cvr}}" alt="Event Image">
                     <div class="event-info">
                         <h2>{{ event.title }}</h2>
                         <p>Date: {{ event.date }}</p>
-                        {% comment %} <p>Description: {{ event.description }}</p> {% endcomment %}
                         <form action="{% url "event" %}" method="POST">
                             {% csrf_token %}
                             <input type="hidden" name="etitle" value="{{event.title}}">
@@ -44,12 +43,12 @@
                             <input type="hidden" name="eimg" value="{{event.img}}">
                             <input type="hidden" name="eimg" value="{{event.img}}">
                             <input type="hidden" name="eimg" value="{{event.img}}">
-                            <button type="submit" name="detailView">Read More:-</button>
+                            <button class="event-btn" type="submit" name="detailView">Read More:-</button>
                         </form>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
 
 
                 
