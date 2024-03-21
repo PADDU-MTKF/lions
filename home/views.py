@@ -1,10 +1,28 @@
 from django.shortcuts import render
-
+from . import data as db
+from django.http import HttpResponse
+import os
+from django.core.cache import cache
 # Create your views here.
 
 
+def update():
+    pass
+
+def cache(request):
+    cache.set("cachename","data",timeout=None)
+    return HttpResponse(status=200)
+
+
 def home(request):
-    return render(request,'home.html')
+
+    # db.getDocument(os.getenv("DB_ID"),"xfsdfedsf",)
+
+    data={
+        "our_prind":cache.get("ourpride"),
+    }
+
+    return render(request,'home.html'data=data)
 
 # def home(request):
 #     if(request.method=="POST"):

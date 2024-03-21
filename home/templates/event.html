@@ -5,27 +5,32 @@
 
 {% block main_content %}
         <!-- About Start -->
-            <center>
-                <div class="srh_body">
 
-                    
-                    <form action="{% url "event" %}" method="POST">
-                        {% csrf_token %}
-                        <div class="search-bar">
-                            <input type="text" class="search-input" id="searchText" name="searchText" placeholder="Enter search text">
-                            <button type="submit" class="search-button" name="nameSearchbtn">Search by Name</button>
-                        </div>
-                    </form>
-                    <form action="{% url "event" %}" method="POST">
-                        {% csrf_token %}
-                        <div class="dt-search">
-                            <input type="date" id="startDate" name="startDate" class="date-input datepicker" placeholder="From Date" required>
-                            <input type="date" id="endDate" name="endDate" class="date-input datepicker" placeholder="To Date" required>
-                            <button type="submit" class="search-button" name="dateSearchbtn">Search by Date</button>
-                        </div>
-                    </form>
+                <div class="srh-master">
+
+                    <div class="srh_body">
+                        
+                        
+                        <form action="{% url "event" %}" method="POST">
+                            {% csrf_token %}
+                            <div class="search-bar">
+                                <input type="text" class="search-input" id="searchText" name="searchText" placeholder="Enter search text">
+                                <button type="submit" class="search-button" name="nameSearchbtn">Search by Name</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="srh_body">
+                        <form action="{% url "event" %}" method="POST">
+                            {% csrf_token %}
+                            <div class="dt-search">
+                                <input type="date" id="startDate" name="startDate" class="date-input datepicker" placeholder="From Date" required>
+                                <input type="date" id="endDate" name="endDate" class="date-input datepicker" placeholder="To Date" required>
+                                <button type="submit" class="search-button" name="dateSearchbtn">Search by Date</button>
+                            </div>
+                        </form>
+                        
+                    </div>
                 </div>
-            </center>
 
             <div class="event_master flex wrap">
             {% for event in data %}

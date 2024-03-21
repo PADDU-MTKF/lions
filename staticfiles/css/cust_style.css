@@ -51,6 +51,11 @@ body {
   }
 }
 
+.srh-master{
+  display: flex;
+  flex-direction: row;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
