@@ -1,31 +1,51 @@
 from django.shortcuts import render
 from . import data as db
+from appwrite.query import Query
 from django.http import HttpResponse
 import os
+from appwrite.client import Client
 from django.core.cache import cache
 # Create your views here.
 
 
 def update():
-    pass
+    our_school=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_SCHOOL"))[0]
+    present_trustee=db.getDocument(os.getenv("DB_ID"),os.getenv("PRESENT_TRUSTEE"))[0]
+    our_pride=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_PRIDE"))[0]
+    achives=db.getDocument(os.getenv("DB_ID"),os.getenv("ACHIEVEMENTS_AND_EXTRAS"),[Query.limit(100)])[0]
 
-def cache(request):
-    cache.set("cachename","data",timeout=None)
+    cache.set("our_school",our_school,timeout=None)
+    cache.set("present_trustee",present_trustee,timeout=None)
+    cache.set("our_pride",our_pride,timeout=None)
+    cache.set("achives",achives,timeout=None)
+    
+
+def updateCache(request):
+    cache.set("OUR_PRIDE","data",timeout=None)
     return HttpResponse(status=200)
 
 
 def home(request):
 
-    # db.getDocument(os.getenv("DB_ID"),"xfsdfedsf",)
-
-    data={
-        "our_prind":cache.get("ourpride"),
+    our_school=cache.get("our_school")
+    if our_school is None:
+        update()
+    our_school=cache.get("our_school") 
+    present_trustee=cache.get("present_trustee") 
+    our_pride=cache.get("our_pride")
+    achives=cache.get("achives")
+    
+    # print(our_school)
+    data = {
+        "ourSchool": our_school,
+        "presentTrustee": present_trustee,
+        "ourPride":our_pride,
+        "achive":achives
     }
+    update()
+    return render(request,'home.html',data)
 
-    return render(request,'home.html'data=data)
 
-# def home(request):
-#     if(request.method=="POST"):
 
 
 def about(request):
