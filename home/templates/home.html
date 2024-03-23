@@ -162,7 +162,7 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">Our Pride</h1>
-                                <p class="mb-4" >•"{{ourPride}}"</p>
+                                <p class="mb-4" >•"{{ourPride.0.Description}}"</p>
                                 <!-- <a class='btn btn-primary py-3 px-5' href=''>Get Started Now<i class='fa fa-arrow-right ms-2'></i></a> -->
                                 <div id="achieve_scroll"></div>
                             </div>
@@ -197,20 +197,29 @@
                         <div class=" wow fadeInUp" data-wow-delay="0.1s">
                             <div class="classes-item">
                                 <div class="bg-light w-75 mx-auto p-3">
-                                    <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
+                                    <img class='img-fluid' src="{{achive.0.Cover_Image}}" alt='Event Image'>
                                 </div>
                                 <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                    <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
+                                    <h2 class='d-block text-center h3 mt-3 mb-4'>{{achive.0.Name}}</h2>
                                     
                                     <!-- button here -->
-                                    <button type="submit" name="detailViewH" class='rmbtn'>Read More</button>
+                                    <input type="hidden" name="etitle" value="{{achive.0.Name}}">
+                                    <input type="hidden" name="edate" value="{{achive.0.Date}}">
+                                    <input type="hidden" name="edis" value="{{achive.0.Description}}">
+                                    <input type="hidden" name="ecvr" value="{{achive.0.Cover_Image}}">
+                                    <input type="hidden" name="eimg" value="{{achive.0.Event_Image_1}}">
+                                    <input type="hidden" name="eimg" value="{{achive.0.Event_Image_2}}">
+                                    <input type="hidden" name="eimg" value="{{achive.0.Event_Image_3}}">
+                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
                                     
                                     <div class="row g-1">
                                         <div class="col-4">
+                                            {% if achive.0.Date %}
                                             <div class="border-top border-3 border-primary pt-2">
                                                 <h6 class="text-primary mb-1">Date</h6>
-                                                <small>xyz</small>
+                                                <small>{{achive.0.Date}}</small>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -222,20 +231,29 @@
                         <div class=" wow fadeInUp" data-wow-delay="0.1s">
                             <div class="classes-item">
                                 <div class="bg-light w-75 mx-auto p-3">
-                                    <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
+                                    <img class='img-fluid' src="{{achive.1.Cover_Image}}" alt='Event Image'>
                                 </div>
                                 <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                    <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
+                                    <h2 class='d-block text-center h3 mt-3 mb-4'>{{achive.1.Name}}</h2>
                                     
                                     <!-- button here -->
-                                    <button type="submit" name="detailViewH" class='rmbtn'>Read More</button>
+                                    <input type="hidden" name="etitle" value="{{achive.1.Name}}">
+                                    <input type="hidden" name="edate" value="{{achive.1.Date}}">
+                                    <input type="hidden" name="edis" value="{{achive.1.Description}}">
+                                    <input type="hidden" name="ecvr" value="{{achive.1.Cover_Image}}">
+                                    <input type="hidden" name="eimg" value="{{achive.1.Event_Image_1}}">
+                                    <input type="hidden" name="eimg" value="{{achive.1.Event_Image_2}}">
+                                    <input type="hidden" name="eimg" value="{{achive.1.Event_Image_3}}">
+                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
                                     
                                     <div class="row g-1">
                                         <div class="col-4">
+                                            {% if achive.1.Date %}
                                             <div class="border-top border-3 border-primary pt-2">
                                                 <h6 class="text-primary mb-1">Date</h6>
-                                                <small>xyz</small>
+                                                <small>{{achive.1.Date}}</small>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -247,26 +265,36 @@
                         <div class=" wow fadeInUp" data-wow-delay="0.1s">
                             <div class="classes-item">
                                 <div class="bg-light w-75 mx-auto p-3">
-                                    <img class='img-fluid' src="{% static 'img/classes-1.jpg' %}" alt=''>
+                                    <img class='img-fluid' src="{{achive.2.Cover_Image}}" alt='Event Image'>
                                 </div>
                                 <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                    <a class='d-block text-center h3 mt-3 mb-4' href="{% static 'event.html' %}">Art & Drawing</a>
+                                    <h2 class='d-block text-center h3 mt-3 mb-4'>{{achive.2.Name}}</h2>
                                     
                                     <!-- button here -->
-                                    <button type="submit" name="detailViewH" class='rmbtn'>Read More</button>
+                                    <input type="hidden" name="etitle" value="{{achive.2.Name}}">
+                                    <input type="hidden" name="edate" value="{{achive.2.Date}}">
+                                    <input type="hidden" name="edis" value="{{achive.2.Description}}">
+                                    <input type="hidden" name="ecvr" value="{{achive.2.Cover_Image}}">
+                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_1}}">
+                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_2}}">
+                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_3}}">
+                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
                                     
                                     <div class="row g-1">
                                         <div class="col-4">
+                                            {% if achive.2.Date %}
                                             <div class="border-top border-3 border-primary pt-2">
                                                 <h6 class="text-primary mb-1">Date</h6>
-                                                <small>xyz</small>
+                                                <small>{{achive.2.Date}}</small>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form> 
+                   
                     {% comment %} {% endfor %} {% endcomment %}
                 </div>
 
@@ -349,73 +377,27 @@
                 </div>
                 <div class="ag-format-container">
                     <div class="ag-courses_box">
+
+                        {% for trustee in presentTrustee %}
                       <div class="ag-courses_item">
                         <a  class="ag-courses-item_link">
                           <div class="ag-courses-item_bg"></div>
                   
                           <div class="ag-courses-item_title">
-                            Lion. Keshava Salian&#160;
+                            {{trustee.Name}}&#160;
                           </div>
                   
                           <div class="ag-courses-item_date-box">
                             Position:
                             <span class="ag-courses-item_date">
-                                President
+                                {{trustee.Position}}
                             </span>
                           </div>
                         </a>
                       </div>
-                  
-                      <div class="ag-courses_item">
-                        <a class="ag-courses-item_link">
-                          <div class="ag-courses-item_bg"></div>
-                  
-                          <div class="ag-courses-item_title">
-                            Lion. Mohideen Kunhi <span style="font-size: 18px !important;">PMJF</span>&#160;
-                          </div>
-                  
-                          <div class="ag-courses-item_date-box">
-                            Position:
-                            <span class="ag-courses-item_date">
-                                Vice President
-                            </span>
-                          </div>
-                        </a>
-                      </div>
-                  
-                      <div class="ag-courses_item">
-                        <a class="ag-courses-item_link">
-                          <div class="ag-courses-item_bg"></div>
-                  
-                          <div class="ag-courses-item_title">
-                            Lion. C. Jeevan Belliappa&#160;
-                          </div>
-                  
-                          <div class="ag-courses-item_date-box">
-                            Position:
-                            <span class="ag-courses-item_date">
-                                Secretary
-                            </span>
-                          </div>
-                        </a>
-                      </div>
-                  
-                      <div class="ag-courses_item">
-                        <a class="ag-courses-item_link">
-                          <div class="ag-courses-item_bg"></div>
-                  
-                          <div class="ag-courses-item_title">
-                            Lion. Jayanth Shetty
-                          </div>
-                  
-                          <div class="ag-courses-item_date-box">
-                            Position:
-                            <span class="ag-courses-item_date">
-                              Treasurer
-                            </span>
-                          </div>
-                        </a>
-                      </div>
+
+                      {% endfor %}
+
                   
                     </div>
                   </div>

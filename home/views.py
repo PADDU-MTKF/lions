@@ -20,36 +20,41 @@ def update():
     cache.set("achives",achives,timeout=None)
     
 
-def updateCache(request):
-    cache.set("OUR_PRIDE","data",timeout=None)
-    return HttpResponse(status=200)
+# def updateCache(request):
+#     cache.set("OUR_PRIDE","data",timeout=None)
+#     return HttpResponse(status=200)
 
 
 def home(request):
 
-    our_school=cache.get("our_school")
-    if our_school is None:
+    present_trustee=cache.get("present_trustee") 
+    if present_trustee is None:
         update()
-    our_school=cache.get("our_school") 
     present_trustee=cache.get("present_trustee") 
     our_pride=cache.get("our_pride")
     achives=cache.get("achives")
     
     # print(our_school)
     data = {
-        "ourSchool": our_school,
         "presentTrustee": present_trustee,
         "ourPride":our_pride,
         "achive":achives
     }
-    update()
     return render(request,'home.html',data)
 
 
 
 
 def about(request):
-    return render(request,'about.html')
+    our_school=cache.get("our_school") 
+    if our_school is None:
+        update()
+    our_school=cache.get("our_school") 
+    data={
+        "our_school": our_school
+    }
+
+    return render(request,'about.html',data)
 
 
 def event(request):
@@ -69,8 +74,13 @@ def event(request):
         
     
     else:
-        data=[{'title':'Oscar Award','description':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','date':'22-Mar-2002','cvr':'https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=600'},
-              {'title':'title2','description':'dis2','date':'69','cvr':'https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},{'title':'Oscar Award','description':'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','date':'22-Mar-2002','cvr':'https://cloud.appwrite.io/v1/storage/buckets/65f1cac29e266939493a/files/65f959ba4d968516ae2d/view?project=65e1b46b94ff79f18974'},]
+        achive=cache.get("achive") 
+        if achive is None:
+            update()
+        achive=cache.get("achive") 
+        data={
+            "achives": achive
+        }
         return render(request,'event.html',{'data': data})
     
 

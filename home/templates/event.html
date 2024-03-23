@@ -33,21 +33,22 @@
                 </div>
 
             <div class="event_master flex wrap">
-            {% for event in data %}
+            {% for achive in achives %}
                 <div class="event-card">
-                    <img src="{{event.cvr}}" alt="Event Image">
+                    <img src="{{achive.Cover_Image}}" alt="Event Image">
                     <div class="event-info">
-                        <h2>{{ event.title }}</h2>
-                        <p>Date: {{ event.date }}</p>
+                        <h2>{{ achive.Name }}</h2>
+
+                        <p>Date: {{ achive.Date }}</p>
                         <form action="{% url "event" %}" method="POST">
                             {% csrf_token %}
-                            <input type="hidden" name="etitle" value="{{event.title}}">
-                            <input type="hidden" name="edate" value="{{event.date}}">
-                            <input type="hidden" name="edis" value="{{event.description}}">
-                            <input type="hidden" name="ecvr" value="{{event.cvr}}">
-                            <input type="hidden" name="eimg" value="{{event.img}}">
-                            <input type="hidden" name="eimg" value="{{event.img}}">
-                            <input type="hidden" name="eimg" value="{{event.img}}">
+                            <input type="hidden" name="etitle" value="{{achive.Name}}">
+                            <input type="hidden" name="edate" value="{{achive.Date}}">
+                            <input type="hidden" name="edis" value="{{achive.Description}}">
+                            <input type="hidden" name="ecvr" value="{{achive.Cover_Image}}">
+                            <input type="hidden" name="eimg" value="{{achive.Event_Image_1}}">
+                            <input type="hidden" name="eimg" value="{{achive.Event_Image_2}}">
+                            <input type="hidden" name="eimg" value="{{achive.Event_Image_3}}">
                             <button class="event-btn" type="submit" name="detailView">Read More:-</button>
                         </form>
                     </div>

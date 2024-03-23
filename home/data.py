@@ -75,7 +75,7 @@ def getDocument(db_id,collection_id,query=None):
             else:
                 value=each_document[column_name]
                 
-            dic[column_name.replace("_"," ")]=value
+            dic[column_name]=value
         doc_list.append(dic)
         
     return doc_list[::-1],attr_lists
