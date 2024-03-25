@@ -6,7 +6,16 @@
 {% block main_content %}
         <!-- About Start -->
 
-                <div class="srh-master">
+          <!-- Page Header End -->
+          <div class="container-xxl py-5 page-header position-relative mb-5">
+            <div class="container py-5">
+                <h1 class="display-2 text-white animated slideInDown mb-4">Achivements</h1>
+             
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+                {% comment %} <div class="srh-master">
 
                     <div class="srh_body">
                         
@@ -30,16 +39,24 @@
                         </form>
                         
                     </div>
-                </div>
+                </div> {% endcomment %}
 
             <div class="event_master flex wrap">
             {% for achive in achives %}
                 <div class="event-card">
+                    {% if achive.Cover_Image %}
                     <img src="{{achive.Cover_Image}}" alt="Event Image">
+                    {% else %}
+                    <div class="event-info-alt">LSS Event</div>
+                    {% endif %}
+
                     <div class="event-info">
                         <h2>{{ achive.Name }}</h2>
 
+                        {% comment %} {% if achive.Date %}
                         <p>Date: {{ achive.Date }}</p>
+                        {% endif %} {% endcomment %}
+
                         <form action="{% url "event" %}" method="POST">
                             {% csrf_token %}
                             <input type="hidden" name="etitle" value="{{achive.Name}}">
@@ -49,7 +66,7 @@
                             <input type="hidden" name="eimg" value="{{achive.Event_Image_1}}">
                             <input type="hidden" name="eimg" value="{{achive.Event_Image_2}}">
                             <input type="hidden" name="eimg" value="{{achive.Event_Image_3}}">
-                            <button class="event-btn" type="submit" name="detailView">Read More:-</button>
+                            <button class="event-btn" type="submit" name="detailView">Read More</button>
                         </form>
                     </div>
                 </div>
