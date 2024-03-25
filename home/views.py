@@ -5,10 +5,12 @@ from django.http import HttpResponse
 import os
 from appwrite.client import Client
 from django.core.cache import cache
+import threading
 # Create your views here.
 
 
 def update():
+    print("cache start")
     our_school=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_SCHOOL"))[0]
     present_trustee=db.getDocument(os.getenv("DB_ID"),os.getenv("PRESENT_TRUSTEE"))[0]
     our_pride=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_PRIDE"))[0]
@@ -18,11 +20,20 @@ def update():
     cache.set("present_trustee",present_trustee,timeout=3600)
     cache.set("our_pride",our_pride,timeout=3600)
     cache.set("achives",achives,timeout=3600)
+    print("cache ended")
     
 
-# def updateCache(request):
-#     cache.set("OUR_PRIDE","data",timeout=None)
-#     return HttpResponse(status=200)
+
+
+
+
+async def updateCache(request):
+    # Handle the request asynchronously without returning any response immediately
+    thread = threading.Thread(target=update)
+    thread.start()
+    
+
+    return HttpResponse(status=200)
 
 
 def home(request):
