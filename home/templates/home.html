@@ -193,67 +193,89 @@
 
                     {% comment %} {% for event in events%} {% endcomment %}
                     
-                    <div class="card m-5 p-3">
-                            <img src="{{achive.1.Cover_Image}}" alt="Placeholder Image">
-                            <div class="card-content">
-                                <h2 class="card-title">"{{achive.1.Name}}"</h2>
-                                {% if achive.1.Date %}
-                                <h5>"{{achive.1.Date}}"</h5>
-                                {% endif %}
-                                <form action="{% url "event" %}" method="post">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="etitle" value="{{achive.1.Name}}">
-                                    <input type="hidden" name="edate" value="{{achive.1.Date}}">
-                                    <input type="hidden" name="edis" value="{{achive.1.Description}}">
-                                    <input type="hidden" name="ecvr" value="{{achive.1.Cover_Image}}">
-                                    <input type="hidden" name="eimg" value="{{achive.1.Event_Image_1}}">
-                                    <input type="hidden" name="eimg" value="{{achive.1.Event_Image_2}}">
-                                    <input type="hidden" name="eimg" value="{{achive.1.Event_Image_3}}">
-                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
-                                </form>
-                            </div>
-                    </div>
-                    <div class="card m-5 p-3">
-                            <img src="{{achive.2.Cover_Image}}" alt="Placeholder Image">
-                            <div class="card-content">
-                                <h2 class="card-title">"{{achive.2.Name}}"</h2>
-                                {% if achive.2.Date %}
-                                <h5>"{{achive.2.Date}}"</h5>
-                                {% endif %}
-                                <form action="{% url "event" %}" method="post">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="etitle" value="{{achive.2.Name}}">
-                                    <input type="hidden" name="edate" value="{{achive.2.Date}}">
-                                    <input type="hidden" name="edis" value="{{achive.2.Description}}">
-                                    <input type="hidden" name="ecvr" value="{{achive.2.Cover_Image}}">
-                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_1}}">
-                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_2}}">
-                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_3}}">
-                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
-                                </form>
-                            </div>
-                    </div>
-                    <div class="card m-5 p-3">
-                            <img src="{{achive.3.Cover_Image}}" alt="Placeholder Image">
-                            <div class="card-content">
-                                <h2 class="card-title">"{{achive.3.Name}}"</h2>
-                                {% if achive.3.Date %}
-                                <h5>"{{achive.3.Date}}"</h5>
-                                {% endif %}
-                                <form action="{% url "event" %}" method="post">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="etitle" value="{{achive.3.Name}}">
-                                    <input type="hidden" name="edate" value="{{achive.3.Date}}">
-                                    <input type="hidden" name="edis" value="{{achive.3.Description}}">
-                                    <input type="hidden" name="ecvr" value="{{achive.3.Cover_Image}}">
-                                    <input type="hidden" name="eimg" value="{{achive.3.Event_Image_1}}">
-                                    <input type="hidden" name="eimg" value="{{achive.3.Event_Image_2}}">
-                                    <input type="hidden" name="eimg" value="{{achive.3.Event_Image_3}}">
-                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
-                                </form>
-                            </div>
+                    <div class="event-card">
+                        {% if achive.1.Cover_Image %}
+                        <img src="{{achive.1.Cover_Image}}" alt="Event Image">
+                        {% else %}
+                        <div class="event-info-alt">LSS Event</div>
+                        {% endif %}
+    
+                        <div class="event-info">
+                            <h4>{{ achive.1.Name }}</h4>
+    
+                            {% comment %} {% if achive.Date %}
+                            <p>Date: {{ achive.Date }}</p>
+                            {% endif %} {% endcomment %}
+    
+                            <form action="{% url "event" %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="etitle" value="{{achive.1.Name}}">
+                                <input type="hidden" name="edate" value="{{achive.1.Date}}">
+                                <input type="hidden" name="edis" value="{{achive.1.Description}}">
+                                <input type="hidden" name="ecvr" value="{{achive.1.Cover_Image}}">
+                                <input type="hidden" name="eimg" value="{{achive.1.Event_Image_1}}">
+                                <input type="hidden" name="eimg" value="{{achive.1.Event_Image_2}}">
+                                <input type="hidden" name="eimg" value="{{achive.1.Event_Image_3}}">
+                                <button class="event-btn" type="submit" name="detailView">Read More</button>
+                            </form>
+                        </div>
                     </div>
                     
+                    <div class="event-card">
+                        {% if achive.2.Cover_Image %}
+                        <img src="{{achive.2.Cover_Image}}" alt="Event Image">
+                        {% else %}
+                        <div class="event-info-alt">LSS Event</div>
+                        {% endif %}
+    
+                        <div class="event-info">
+                            <h4>{{ achive.2.Name }}</h4>
+    
+                            {% comment %} {% if achive.Date %}
+                            <p>Date: {{ achive.Date }}</p>
+                            {% endif %} {% endcomment %}
+    
+                            <form action="{% url "event" %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="etitle" value="{{achive.2.Name}}">
+                                <input type="hidden" name="edate" value="{{achive.2.Date}}">
+                                <input type="hidden" name="edis" value="{{achive.2.Description}}">
+                                <input type="hidden" name="ecvr" value="{{achive.2.Cover_Image}}">
+                                <input type="hidden" name="eimg" value="{{achive.2.Event_Image_1}}">
+                                <input type="hidden" name="eimg" value="{{achive.2.Event_Image_2}}">
+                                <input type="hidden" name="eimg" value="{{achive.2.Event_Image_3}}">
+                                <button class="event-btn" type="submit" name="detailView">Read More</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        {% if achive.3.Cover_Image %}
+                        <img src="{{achive.3.Cover_Image}}" alt="Event Image">
+                        {% else %}
+                        <div class="event-info-alt">LSS Event</div>
+                        {% endif %}
+    
+                        <div class="event-info">
+                            <h4>{{ achive.3.Name }}</h4>
+    
+                            {% comment %} {% if achive.Date %}
+                            <p>Date: {{ achive.Date }}</p>
+                            {% endif %} {% endcomment %}
+    
+                            <form action="{% url "event" %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="etitle" value="{{achive.3.Name}}">
+                                <input type="hidden" name="edate" value="{{achive.3.Date}}">
+                                <input type="hidden" name="edis" value="{{achive.3.Description}}">
+                                <input type="hidden" name="ecvr" value="{{achive.3.Cover_Image}}">
+                                <input type="hidden" name="eimg" value="{{achive.3.Event_Image_1}}">
+                                <input type="hidden" name="eimg" value="{{achive.3.Event_Image_2}}">
+                                <input type="hidden" name="eimg" value="{{achive.3.Event_Image_3}}">
+                                <button class="event-btn" type="submit" name="detailView">Read More</button>
+                            </form>
+                        </div>
+                    </div>
                     {% comment %} {% endfor %} {% endcomment %}
                     {% comment %} <form action="{% url "event" %}" method="post">
                         {% csrf_token %}
