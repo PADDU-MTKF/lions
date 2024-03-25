@@ -14,10 +14,10 @@ def update():
     our_pride=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_PRIDE"))[0]
     achives=db.getDocument(os.getenv("DB_ID"),os.getenv("ACHIEVEMENTS_AND_EXTRAS"),[Query.limit(100)])[0]
 
-    cache.set("our_school",our_school,timeout=None)
-    cache.set("present_trustee",present_trustee,timeout=None)
-    cache.set("our_pride",our_pride,timeout=None)
-    cache.set("achives",achives,timeout=None)
+    cache.set("our_school",our_school,timeout=3600)
+    cache.set("present_trustee",present_trustee,timeout=3600)
+    cache.set("our_pride",our_pride,timeout=3600)
+    cache.set("achives",achives,timeout=3600)
     
 
 # def updateCache(request):
