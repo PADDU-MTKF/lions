@@ -680,12 +680,16 @@ h6,
 
 .card img {
     width: 100%;
-    height: 70%;
+    height: 200px; /* Fixed height for the image */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
     display: block;
 }
 
 .card-content {
+    height: 200px; /* Fixed height for the content */
     padding: 20px;
+    box-sizing: border-box; /* Include padding in height calculation */
+    overflow: hidden; /* Hide overflow content */
 }
 
 .card-title {
@@ -712,6 +716,7 @@ h6,
 }
 
 
+
 .card1 {
     width: 300px;
     height: 300px;
@@ -732,6 +737,28 @@ h6,
    flex-wrap: wrap;
     gap: 1em;
 }
+
+
+.unique-card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .unique-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .unique-container {
+    padding: 2px 16px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .unique-card {
+      width: 100%;
+    }
+  }
 
 
 
