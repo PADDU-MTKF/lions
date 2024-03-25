@@ -59,18 +59,33 @@ def about(request):
 
 def event(request):
     if(request.method=="POST"):
-        if "nameSearchbtn" in request.POST:
-            search_value = request.POST.get("searchText")
-            return render(request, 'eventdetails.html', {'search_value': search_value})
-        elif "dateSearchbtn" in request.POST:
-            to_date = request.POST.get("startDate")
-            from_date = request.POST.get("endDate")
-        elif "detailView" in request.POST:
+        # if "nameSearchbtn" in request.POST:
+        #     search_value = request.POST.get("searchText")
+        #     return render(request, 'eventdetails.html', {'search_value': search_value})
+        # elif "dateSearchbtn" in request.POST:
+        #     to_date = request.POST.get("startDate")
+        #     from_date = request.POST.get("endDate")
+        if "detailView" in request.POST:
             det_title = request.POST.get("etitle")
-            det_date = request.POST.get("edate")
-            det_dis = request.POST.get("edis")
-            det_cvr = request.POST.get("ecvr")
-            return render(request,'eventdetails.html',{'det_title':det_title,'det_date':det_date,'det_dis':det_dis,'det_cvr':det_cvr})
+            det_date = request.POST.get("edate") if request.POST.get("edate")!="None" else None
+            det_dis = request.POST.get("edis") 
+            det_cvr = request.POST.get("ecvr") if request.POST.get("ecvr")!="None" else None
+            eimg1 = request.POST.get("eimg1") if request.POST.get("eimg1")!="None" else None
+            eimg2 = request.POST.get("eimg2") if request.POST.get("eimg2")!="None" else None
+            eimg3 = request.POST.get("eimg3") if request.POST.get("eimg3")!="None" else None
+            
+            data={'det_title':det_title,'det_date':det_date,'det_dis':det_dis,'det_cvr':det_cvr,'eimg1':eimg1,'eimg2':eimg2,'eimg3':eimg3}
+            return render(request,'eventdetails.html',data)
+        
+        else:
+            achive=cache.get("achives") 
+            if achive is None:
+                update()
+            achive=cache.get("achives") 
+            data={
+                "achives": achive
+            }
+            return render(request,'event.html',data)
         
     
     else:

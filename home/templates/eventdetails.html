@@ -10,7 +10,10 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <h1 class="mb-4">"{{ det_title }}"</h1>
+                        {% if det_date %}
+                        
                         <h3 class="mb-4">"{{ det_date }}"</h3>
+                        {% endif %}
                         <p>"{{det_dis}}"</p>
                         <div class="row g-4 align-items-center">
                             <div class="col-sm-6">
@@ -31,17 +34,25 @@
                                     <img src="{{det_cvr}}"alt="Placeholder Image">
                                 </div>
                           
+                                {% if eimg1 %}
                                 <div class="card1">
-                                    <img src="{% static 'img/about-2.jpg' %}" alt="Placeholder Image">
+                                    <img src="{{eimg1}}" alt="Event Image">
                                 </div>
+                                {% endif %}
+
+                                {% if eimg2 %}
+                                <div class="card1">
+                                    <img src="{{eimg2}}" alt="Event Image">
+                                </div>
+                                {% endif %}
+
+                                {% if eimg3 %}
+                                <div class="card1">
+                                    <img src="{{eimg3}}" alt="Event Image">
+                                </div>
+                                {% endif %}
                             
-                                <div class="card1">
-                                    <img src="{% static 'img/about-3.jpg' %}" alt="Placeholder Image">
-                                </div>
-                                
-                                <div class="card1">
-                                    <img src="{% static 'img/about-3.jpg' %}" alt="Placeholder Image">
-                                </div>
+                            
                            
                         </div>
                     </div>
