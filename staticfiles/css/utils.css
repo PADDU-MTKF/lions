@@ -1,6 +1,9 @@
 .flex{
     display: flex;
     align-items: center;
+    justify-content: center;
+    
+
 }
 .wrap{
     flex-wrap: wrap;
@@ -11,4 +14,8 @@
     flex-direction: column;
     gap: 10px;
     /* margin-right: 0; */
+}
+
+.center{
+    justify-content: center;
 }

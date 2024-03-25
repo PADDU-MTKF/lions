@@ -192,46 +192,38 @@
                     <div class="form-container flex">
 
                     {% comment %} {% for event in events%} {% endcomment %}
-                    <form action="{% url "event" %}" method="post">
-                        {% csrf_token %}
-                        <div class=" wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="classes-item">
-                                <div class="bg-light w-75 mx-auto p-3">
-                                    <img class='img-fluid' src="{{achive.0.Cover_Image}}" alt='Event Image'>
-                                </div>
-                                <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                    <h2 class='d-block text-center h3 mt-3 mb-4'>{{achive.0.Name}}</h2>
-                                    
-                                    <!-- button here -->
-                                    <input type="hidden" name="etitle" value="{{achive.0.Name}}">
-                                    <input type="hidden" name="edate" value="{{achive.0.Date}}">
-                                    <input type="hidden" name="edis" value="{{achive.0.Description}}">
-                                    <input type="hidden" name="ecvr" value="{{achive.0.Cover_Image}}">
-                                    <input type="hidden" name="eimg" value="{{achive.0.Event_Image_1}}">
-                                    <input type="hidden" name="eimg" value="{{achive.0.Event_Image_2}}">
-                                    <input type="hidden" name="eimg" value="{{achive.0.Event_Image_3}}">
-                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
-                                    
-                                    <div class="row g-1">
-                                        <div class="col-4">
-                                            {% if achive.0.Date %}
-                                            <div class="border-top border-3 border-primary pt-2">
-                                                <h6 class="text-primary mb-1">Date</h6>
-                                                <small>{{achive.0.Date}}</small>
-                                            </div>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+             
+                    <div class="card">
+                        <img src="{{achive.2.Cover_Image}}" alt="Placeholder Image">
+                        <div class="card-content">
+                          <h2 class="card-title">Title Goes Here</h2>
+                         
+                          <a href="#" class="read-more-btn">Read More</a>
                         </div>
-                    </form> 
+                      </div>
+                    <div class="card">
+                        <img src="{{achive.2.Cover_Image}}" alt="Placeholder Image">
+                        <div class="card-content">
+                          <h2 class="card-title">Title Goes Here</h2>
+                         
+                          <a href="#" class="read-more-btn">Read More</a>
+                        </div>
+                      </div>
+                    <div class="card">
+                        <img src="{{achive.2.Cover_Image}}" alt="Placeholder Image">
+                        <div class="card-content">
+                          <h2 class="card-title">Title Goes Here</h2>
+                          
+                          <a href="#" class="read-more-btn">Read More</a>
+                        </div>
+                      </div>
+                    {% comment %} {% endfor %} {% endcomment %}
                     <form action="{% url "event" %}" method="post">
                         {% csrf_token %}
                         <div class=" wow fadeInUp" data-wow-delay="0.1s">
                             <div class="classes-item">
                                 <div class="bg-light w-75 mx-auto p-3">
-                                    <img class='img-fluid' src="{{achive.1.Cover_Image}}" alt='Event Image'>
+                                    <img class='img-fluid img-fluid1'  src="{{achive.1.Cover_Image}}" alt='Event Image'>
                                 </div>
                                 <div class="bg-light rounded p-4 pt-5 mt-n5">
                                     <h2 class='d-block text-center h3 mt-3 mb-4'>{{achive.1.Name}}</h2>
@@ -260,47 +252,12 @@
                             </div>
                         </div>
                     </form> 
-                    <form action="{% url "event" %}" method="post">
-                        {% csrf_token %}
-                        <div class=" wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="classes-item">
-                                <div class="bg-light w-75 mx-auto p-3">
-                                    <img class='img-fluid' src="{{achive.2.Cover_Image}}" alt='Event Image'>
-                                </div>
-                                <div class="bg-light rounded p-4 pt-5 mt-n5">
-                                    <h2 class='d-block text-center h3 mt-3 mb-4'>{{achive.2.Name}}</h2>
-                                    
-                                    <!-- button here -->
-                                    <input type="hidden" name="etitle" value="{{achive.2.Name}}">
-                                    <input type="hidden" name="edate" value="{{achive.2.Date}}">
-                                    <input type="hidden" name="edis" value="{{achive.2.Description}}">
-                                    <input type="hidden" name="ecvr" value="{{achive.2.Cover_Image}}">
-                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_1}}">
-                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_2}}">
-                                    <input type="hidden" name="eimg" value="{{achive.2.Event_Image_3}}">
-                                    <button type="submit" name="detailView" class='rmbtn'>Read More</button>
-                                    
-                                    <div class="row g-1">
-                                        <div class="col-4">
-                                            {% if achive.2.Date %}
-                                            <div class="border-top border-3 border-primary pt-2">
-                                                <h6 class="text-primary mb-1">Date</h6>
-                                                <small>{{achive.2.Date}}</small>
-                                            </div>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form> 
-                   
-                    {% comment %} {% endfor %} {% endcomment %}
+
+                </div>
                 </div>
 
                   
                     
-                </div>
                 <br>
                 <br>
                 <a href="events" class='view_more_btn'>View More</a>
