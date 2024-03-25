@@ -74,14 +74,14 @@ def event(request):
         
     
     else:
-        achive=cache.get("achive") 
+        achive=cache.get("achives") 
         if achive is None:
             update()
-        achive=cache.get("achive") 
+        achive=cache.get("achives") 
         data={
             "achives": achive
         }
-        return render(request,'event.html',{'data': data})
+        return render(request,'event.html',data)
     
 
 # def event(request):
