@@ -27,7 +27,7 @@ def update():
 
 
 
-async def updateCache(request):
+def updateCache(request):
     # Handle the request asynchronously without returning any response immediately
     thread = threading.Thread(target=update)
     thread.start()
