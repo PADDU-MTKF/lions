@@ -666,7 +666,7 @@ h6,
 
 .form-container {
     justify-content: center;
-    gap: 2em;
+    /* gap: 2em; */
 }
 
 .card {
@@ -751,7 +751,11 @@ h6,
   }
   
   .unique-container {
-    padding: 2px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
   }
   
   @media only screen and (max-width: 600px) {

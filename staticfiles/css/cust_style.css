@@ -105,7 +105,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 
 .event-card {
-  width: 28%;
+  width: 31%;
   height: 24em;
   min-width: 350px;
   margin: 24px auto;
