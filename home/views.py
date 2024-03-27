@@ -14,11 +14,13 @@ def update():
     our_school=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_SCHOOL"))[0]
     present_trustee=db.getDocument(os.getenv("DB_ID"),os.getenv("PRESENT_TRUSTEE"))[0]
     our_pride=db.getDocument(os.getenv("DB_ID"),os.getenv("OUR_PRIDE"))[0]
+    infrastructure=db.getDocument(os.getenv("DB_ID"),os.getenv("INFRASTRUCTURE"))[0]
     achives=db.getDocument(os.getenv("DB_ID"),os.getenv("ACHIEVEMENTS_AND_EXTRAS"),[Query.limit(100)])[0]
 
     cache.set("our_school",our_school,timeout=None)
     cache.set("present_trustee",present_trustee,timeout=None)
     cache.set("our_pride",our_pride,timeout=None)
+    cache.set("infrastructure",infrastructure,timeout=None)
     cache.set("achives",achives,timeout=None)
     print("cache ended")
     
@@ -61,8 +63,10 @@ def about(request):
     if our_school is None:
         update()
     our_school=cache.get("our_school") 
+    infrastructure=cache.get("infrastructure") 
     data={
-        "our_school": our_school
+        "our_school": our_school,
+        "infrastructure":infrastructure
     }
 
     return render(request,'about.html',data)
