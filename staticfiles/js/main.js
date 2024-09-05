@@ -24,20 +24,28 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
+
+
+    let scrollTimer; // Declare a variable to track the timer
+
+// Back to top button
+$(window).scroll(function () {
+    // Show the button immediately when scrolling starts
+    $('.back-to-top').fadeIn('slow');
+
+    // Clear any existing timer when the user scrolls
+    clearTimeout(scrollTimer);
+
+    // Set a timer to hide the button after 2 seconds of no scrolling
+    scrollTimer = setTimeout(function () {
+        $('.back-to-top').fadeOut('slow');
+    }, 500); // 2000ms = 2 seconds
+});
+
+$('.back-to-top').click(function () {
+    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+    return false;
+});
 
 
     // Header carousel
