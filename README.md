@@ -10,16 +10,16 @@ The platform is designed to be **simple, maintainable, and content-driven**, mak
 
 ## ✨ Features
 
-- 🏫 Public-facing school website
-- 🏆 Achievements & awards showcase
-- 📰 News, announcements & updates
-- 🖼️ Image & media gallery
-- ✏️ Editable content sections (About, Vision, Facilities, etc.)
-- 🔐 Custom master admin panel (modular)
-- 🧩 Role-based admin access
-- 💾 Appwrite-powered database & storage
-- 📱 Responsive UI for all devices
-- ⚡ Fast content updates without redeploy
+- Public-facing school website
+- Achievements & awards showcase
+- News, announcements & updates
+- Image & media gallery
+- Editable content sections (About, Vision, Facilities, etc.)
+- Custom master admin panel (modular)
+- Role-based admin access
+- Appwrite-powered database & storage
+- Responsive UI for all devices
+- Fast content updates without redeploy
 
 ---
 
